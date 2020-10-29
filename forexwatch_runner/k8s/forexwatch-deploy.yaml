@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: forexwatch
+  labels:
+    app: forexwatch
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: forexwatch
+      labels:
+        app: forexwatch
+    spec:
+      containers:
+        - name: forexwatch
+          image: katvasoft/forexwatch
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: "docker"
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: forexwatch
+---
+apiVersion: v1                # API version
+kind: Service                 # Type of the kubernetes resource
+metadata:
+  name: forexwatch    # Name of the kubernetes resource
+  labels:                     # Labels that will be applied to this resource
+    app: forexwatch
+spec:
+  type: NodePort              # The service will be exposed by opening a Port on each node and proxying it.
+  selector:
+    app: forexwatch   # The service exposes Pods with label `app=polling-app-server`
+  ports:                      # Forward incoming connections on port 8080 to the target port 8080
+    - name: http
+      port: 9090
+      targetPort: 9090

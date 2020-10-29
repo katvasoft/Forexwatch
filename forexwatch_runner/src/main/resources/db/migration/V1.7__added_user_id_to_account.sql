@@ -1,0 +1,1 @@
+ALTER TABLE account_info ADD COLUMN user_id character varying(255);

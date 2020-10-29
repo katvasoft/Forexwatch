@@ -1,0 +1,25 @@
+docker run -d -p 9090:9090 -e "SPRING_PROFILES_ACTIVE=docker" --network forexwatch-net --name forexwatch katvasoft/forexwatch
+
+docker build -t katvasoft/forexwatch .
+
+java -jar "-Dspring.profiles.active=development" forexwatchRunner.jar
+
+
+docker network create --driver bridge forexwatch-net
+
+
+docker network connect forexwatch-net skolli
+
+kubectl create -f sql-server-deploy.yaml
+
+kubectl create -f forexwatch-deploy.yaml
+
+kubectl get pods -l app=skolli -o wide --watch
+
+kubectl delete deployment name=skolli
+
+kubectl get services
+
+kubectl create -f sql-pvc.yaml
+
+kubectl port-forward aqua-csp-766689745b-4ln7q 8080:8080

@@ -1,0 +1,21 @@
+<div>
+    <h2 mat-dialog-title>Order details</h2>
+    <mat-dialog-content class="mat-typography">
+        <h3> Strategy name </h3>
+        <p> {{log.strategyName}} </p>
+        <h3> Log event date </h3>
+        <p> {{log.logEventDate |  date:'dd.MM.yyyy hh:mm:ss'}} </p>
+        <h3> Type </h3>
+        <p> {{ log.logMessageType }}</p>
+        <p>
+            <mat-form-field appearance="fill">
+                <mat-label>Log message</mat-label>
+                <textarea disabled matInput> {{log.logMessage}} </textarea>
+              </mat-form-field>
+        </p>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close (onClick)="close()">Ok</button>
+        
+      </mat-dialog-actions>
+</div>

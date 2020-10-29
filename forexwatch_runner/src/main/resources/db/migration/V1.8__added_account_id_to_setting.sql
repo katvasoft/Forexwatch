@@ -1,0 +1,1 @@
+ALTER TABLE setting ADD COLUMN setting_account_id character varying(255);

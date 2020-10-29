@@ -1,0 +1,1 @@
+ALTER TABLE order_info ADD COLUMN order_comment character varying(255) COLLATE pg_catalog."default";

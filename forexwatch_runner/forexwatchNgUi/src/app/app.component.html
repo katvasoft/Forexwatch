@@ -1,0 +1,46 @@
+<div>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+        <div class="container">
+            
+          <a href="#" class="navbar-brand logo"><img src="assets/img/KatvaSoftLogo.jpg" width="60" height="60" alt="">Forexwatch</a><button data-toggle="collapse" data-target="#navcol-1" class="navbar-toggler"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse"
+                id="navcol-1">
+                <ul class="navbar-nav mr-auto" *ngIf="loggedIn$ | async">
+                    <li class="nav-item">
+                        <a class="nav-link"  routerLink="/dashboard" >Dashboard</a>
+                      </li>
+                    <li class="nav-item">
+                        <a class="nav-link"  routerLink="/accounts" >Accounts</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link"  routerLink="/orders" >Orders</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link"  routerLink="/alerts" >Alerts</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link"  routerLink="/notes" >Notes</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link"  routerLink="/settings" >Settings</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link"  routerLink="/strategylogs" >Logs</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link"  routerLink="/pwordchange" >Change password</a>
+                      </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                  
+                  <button *ngIf="loggedIn$ | async" class="btn my-2 my-sm-0" (click)="logOut()">Logout</button>
+                </form>
+            </div>
+        </div>
+      </nav>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <router-outlet></router-outlet>
+</div>

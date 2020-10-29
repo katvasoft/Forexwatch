@@ -1,0 +1,1 @@
+ALTER TABLE order_info ADD COLUMN account_id character varying(255) COLLATE pg_catalog."default";

@@ -1,0 +1,35 @@
+<div class="container">
+    <div *ngIf="showSuccessMessage$ | async" class="alert alert-success" role="alert">
+        {{message$ | async}}
+      </div>
+      <div *ngIf="showFailureMessage$ | async" class="alert alert-danger" role="alert">
+        {{message$ | async}}
+      </div>
+      <br/>
+      <mat-card>
+
+        <mat-card-content>
+            <mat-card-header>
+                <mat-card-title>Change password</mat-card-title>
+                
+            </mat-card-header>
+            <mat-form-field>
+                <mat-label>Old password</mat-label>
+                <input matInput name="oldPassword" type="password" [(ngModel)]="passwordChange.oldPassword">
+            </mat-form-field>
+            <br/>
+            <mat-form-field>
+                <mat-label>New password</mat-label>
+                <input matInput name="newPassword" type="password" [(ngModel)]="passwordChange.newPassword">
+            </mat-form-field>
+            <br/>
+            <mat-form-field>
+                <mat-label>New password again</mat-label>
+                <input matInput name="newPasswordAgain" type="password" [(ngModel)]="newPasswordAgain">
+            </mat-form-field>
+        </mat-card-content>
+        <br/>
+        <button mat-button (click)="changePassword()">Change password</button>
+
+      </mat-card>
+</div>

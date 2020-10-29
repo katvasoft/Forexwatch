@@ -1,0 +1,35 @@
+<div>
+    <h2 mat-dialog-title>Setting</h2>
+    <mat-dialog-content class="mat-typography">
+        <h3>Setting group</h3>
+        <mat-form-field *ngIf="!newSettingGroup">
+            <mat-label>Setting group name</mat-label>
+            <mat-select [(value)]="setting.settingGroupName" >
+              <mat-option *ngFor="let settingGroup  of settingGroups$ | async"  [(value)]="settingGroup.value">{{settingGroup.name}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field class="rightPad" *ngIf="newSettingGroup">
+            <mat-label>Setting group name</mat-label>
+            <input matInput name="settingName"  [(ngModel)]="setting.settingGroupName">
+        </mat-form-field>
+        <mat-checkbox class="leftPad" [(ngModel)]="newSettingGroup">New setting group</mat-checkbox>    
+        <h3>Setting name</h3>
+        <p> 
+            <mat-form-field>
+                <mat-label>Setting name</mat-label>
+                <input matInput name="settingName"  [(ngModel)]="setting.settingName">
+            </mat-form-field>
+    </p>
+    <h3>Setting value</h3>
+    <p>
+        <mat-form-field>
+            <mat-label>Setting value</mat-label>
+            <input matInput name="settingName"  [(ngModel)]="setting.settingValue">
+        </mat-form-field>   
+    </p>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close (onClick)="close()">Cancel</button>
+        <button mat-button [mat-dialog-close]="setting" (onClick)="close()" cdkFocusInitial>Save</button>
+      </mat-dialog-actions>
+</div>

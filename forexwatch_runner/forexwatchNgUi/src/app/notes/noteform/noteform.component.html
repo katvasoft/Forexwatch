@@ -1,0 +1,49 @@
+<div *ngIf="note">
+  
+    <mat-card>
+
+    <mat-card-content>
+        <mat-card-header>
+            <mat-card-title>Edit note</mat-card-title>
+            
+        </mat-card-header>
+          <!-- TODO: Add validation and instrument as a dropdown from the service -->
+        <form #noteForm="ngForm">
+            <mat-form-field>
+                <mat-label>Choose valid until date</mat-label>
+                <input name="fromDate" matInput [matDatepicker]="fromPicker" name="noteValidUntil" [(ngModel)]="note.noteValidUntil">
+                <mat-datepicker-toggle matSuffix [for]="fromPicker"></mat-datepicker-toggle>
+                <mat-datepicker #fromPicker></mat-datepicker>
+            </mat-form-field>
+            <br/>
+            <mat-form-field>
+                <mat-label>Account</mat-label>
+                <mat-select [(value)]="note.accountId">
+                  <mat-option *ngFor="let account of accounts$ | async" [(value)]="account.accountId">{{account.accountName}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <br/>
+            <mat-form-field>
+                <mat-label>Note title</mat-label>
+                <input matInput name="noteTitle" [(ngModel)]="note.noteTitle">
+            </mat-form-field>
+            <br/>
+            <mat-form-field>
+                <mat-label>Instrument</mat-label>
+                <input matInput name="instrument"  [(ngModel)]="note.instrument">
+            </mat-form-field>
+            <br/>
+            <mat-form-field appearance="fill">
+                <mat-label>Note </mat-label>
+                <textarea matInput name="note" [(ngModel)]="note.note"></textarea>
+            </mat-form-field>
+            <br/>
+            <button mat-button (click)="saveNote()">Save</button>
+            <button mat-button color="warn" *ngIf="note.id" (click)="delete()">Delete</button>
+            <button mat-button (click)="cancel()">Cancel</button>
+        </form>
+    </mat-card-content>
+    </mat-card>
+  
+
+</div>

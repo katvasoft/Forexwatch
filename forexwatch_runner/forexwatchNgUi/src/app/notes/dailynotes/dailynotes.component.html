@@ -1,0 +1,20 @@
+<div >
+    <div *ngFor="let note of notes">
+    <mat-accordion>
+        <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{note.noteTitle}}
+            </mat-panel-title>
+            <mat-panel-description>
+              {{note.instrument}} - {{note.noteDate | date }}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <p>{{note.note}}</p>
+          <br/>
+          <button *ngIf="showedit" mat-button (click)="edit(note)">Edit</button>
+        </mat-expansion-panel>
+    </mat-accordion> 
+    <br/>
+    </div>       
+</div>

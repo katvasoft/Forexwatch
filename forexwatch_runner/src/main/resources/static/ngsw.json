@@ -1,0 +1,82 @@
+{
+  "configVersion": 1,
+  "timestamp": 1593015137683,
+  "index": "/forexwatch_runner/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/forexwatch_runner/favicon.ico",
+        "/forexwatch_runner/index.html",
+        "/forexwatch_runner/main-es2015.07fb78c262cbe06457b2.js",
+        "/forexwatch_runner/main-es5.07fb78c262cbe06457b2.js",
+        "/forexwatch_runner/manifest.webmanifest",
+        "/forexwatch_runner/polyfills-es2015.5b10b8fd823b6392f1fd.js",
+        "/forexwatch_runner/polyfills-es5.8e50a9832860f7cf804a.js",
+        "/forexwatch_runner/runtime-es2015.c5fa8325f89fc516600b.js",
+        "/forexwatch_runner/runtime-es5.c5fa8325f89fc516600b.js",
+        "/forexwatch_runner/styles.782246d2c534cbee6405.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/forexwatch_runner/assets/icons/icon-128x128.png",
+        "/forexwatch_runner/assets/icons/icon-144x144.png",
+        "/forexwatch_runner/assets/icons/icon-152x152.png",
+        "/forexwatch_runner/assets/icons/icon-192x192.png",
+        "/forexwatch_runner/assets/icons/icon-384x384.png",
+        "/forexwatch_runner/assets/icons/icon-512x512.png",
+        "/forexwatch_runner/assets/icons/icon-72x72.png",
+        "/forexwatch_runner/assets/icons/icon-96x96.png",
+        "/forexwatch_runner/assets/img/KatvaSoftLogo.jpg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/forexwatch_runner/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/forexwatch_runner/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/forexwatch_runner/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/forexwatch_runner/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/forexwatch_runner/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/forexwatch_runner/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/forexwatch_runner/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/forexwatch_runner/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/forexwatch_runner/assets/img/KatvaSoftLogo.jpg": "7df07c3cbdfad8466c3b96acfd7bd624e4353b63",
+    "/forexwatch_runner/favicon.ico": "02275a63d5e0adb6c2efb2a2ef135ad367891cd8",
+    "/forexwatch_runner/index.html": "ea29d7a9d9379f1ee6b9370d4761df17d7c09c63",
+    "/forexwatch_runner/main-es2015.07fb78c262cbe06457b2.js": "5b3a12d3d197fd4106b9044d61ed481e9df9581d",
+    "/forexwatch_runner/main-es5.07fb78c262cbe06457b2.js": "8113665ab1f945938ef7a916b11d9716910dc4f9",
+    "/forexwatch_runner/manifest.webmanifest": "32fcc0e42907485e24d9bb59c2aa5090eab638ee",
+    "/forexwatch_runner/polyfills-es2015.5b10b8fd823b6392f1fd.js": "9abfe15f17820a646e3d51c420908d9f8f7b69b8",
+    "/forexwatch_runner/polyfills-es5.8e50a9832860f7cf804a.js": "a09a6044f37c73c715665663d2dcb61f666618a1",
+    "/forexwatch_runner/runtime-es2015.c5fa8325f89fc516600b.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/forexwatch_runner/runtime-es5.c5fa8325f89fc516600b.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/forexwatch_runner/styles.782246d2c534cbee6405.css": "5f4293f7e14f6aad251bbb1358a62560bc241c9a"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}

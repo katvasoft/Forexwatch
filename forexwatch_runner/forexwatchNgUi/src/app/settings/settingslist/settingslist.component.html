@@ -1,0 +1,22 @@
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Setting name</th>
+                <th scope="col">Setting value</th>
+                <th scope="col">Setting group</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let setting of settings">
+                <td>{{setting.settingName}}</td>
+                <td>{{setting.settingValue}}</td>
+                <td>{{setting.settingGroupName}}</td>
+                <td><button mat-button (click)="edit(setting)">Edit</button></td>
+                <td><button mat-button (click)="delete(setting)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

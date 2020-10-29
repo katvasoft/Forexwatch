@@ -1,0 +1,1 @@
+ALTER TABLE account_alert ADD COLUMN strategy_days_to_check int;

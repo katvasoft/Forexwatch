@@ -1,0 +1,26 @@
+
+
+<main class="page login-page">
+  <section class="clean-block clean-form dark">
+      <div class="container">
+          <div class="block-heading">
+              <h2 class="text-info">Log In</h2>
+              
+          </div>
+          <form>
+              <div class="form-group"><label for="email">Username</label><input type="text" class="form-control item" id="email"  [(ngModel)]="username" name="username" /></div>
+              <div class="form-group"><label for="password">Password</label><input type="password" class="form-control" [(ngModel)]="password"  id="password" name="password"/></div>
+              <div class="form-group">
+                  
+              </div><button class="btn btn-primary btn-block" (click)="login()"  type="button">
+                Log In
+                <!--<span *ngIf="loading$ | async" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                <span *ngIf="loading$ | async" class="sr-only">Loading...</span>-->
+              </button>
+              <br/>
+            
+            
+            </form>
+      </div>
+  </section>
+</main>

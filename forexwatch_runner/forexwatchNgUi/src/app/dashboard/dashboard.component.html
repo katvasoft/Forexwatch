@@ -1,0 +1,44 @@
+<div>
+    <div class="container">
+    <div class="jumbotron">
+        <h2 class="display-4">Quick stats</h2>
+        <p class="lead">Quick stats on how strategies are performing</p>
+  
+      </div>
+    <div *ngFor="let stat of stats$ | async">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Strategy: {{stat.strategyName}}</mat-card-title>
+            <mat-card-subtitle>Initial deposit : {{stat.initialDeposit}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="container">
+            <p>Account: {{stat.accountName}}</p>
+            <p>Profit loss: {{stat.profitLoss}}</p>
+            <p>Profit loss pips: {{stat.profitLossPips}}</p>
+            <p>Profit loss percent: {{stat.percentProfitLossFromInitialSum}} %</p>
+        </div>
+        </mat-card-content>
+    </mat-card>
+    <br/>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h3>Daily notes</h3>
+            <app-dailynotes [showedit]="false" [notes]="dailyNotes$ | async"></app-dailynotes>
+        </div>
+        <div class="col">
+            <h3>Scanner notifications</h3>
+            <div *ngFor="let not of scannerDailyNotifications$ | async">
+                <mat-card>
+                    <mat-card-title>{{not.scannerName}} - {{not.instrument}}</mat-card-title>
+                    <mat-card-content>
+                        {{not.notificationMessage}}
+                    </mat-card-content>
+                </mat-card>
+                
+            </div>
+        </div>
+    </div>
+</div>
+</div>

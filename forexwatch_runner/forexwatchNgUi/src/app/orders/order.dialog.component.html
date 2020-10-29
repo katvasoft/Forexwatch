@@ -1,0 +1,31 @@
+<div>
+    <h2 mat-dialog-title>Order details</h2>
+    <mat-dialog-content class="mat-typography">
+        <h3>Strategy</h3>
+        <p><em>{{order.strategyName}}</em></p>
+        <h3>Order label</h3>
+        <p><em>{{order.orderLabel}}</em></p>
+        <h3>Lots</h3>
+        <p><em>{{order.lots}}</em></p>
+        <h3>Order type</h3>
+        <p><em>{{order.orderType}}</em></p>
+        <h3>Instrument</h3>
+        <p><em>{{order.orderInstrument}}</em></p>
+        <h3>Order id</h3>
+        <p><em>{{order.orderId}}</em></p>
+        <h3>Order date</h3>
+        <p><em>{{order.orderDate | date:'dd.MM.yyyy hh:mm:ss'}}</em></p>
+        <h3>Order profit loss</h3>
+        <p><em>{{order.orderProfitLoss}}</em></p>
+        <h3>Order profit loss pips</h3>
+        <p><em>{{order.orderProfitLossPips}}</em></p>
+        <h3>Order open</h3>
+        <p><em>{{order.orderOpen}}</em></p>
+        <h3>Comment</h3>
+        <p> <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"  [(ngModel)]="order.orderComment"></textarea></p>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close (onClick)="close()">Cancel</button>
+        <button mat-button [mat-dialog-close]="order.orderComment" (onClick)="close()" cdkFocusInitial>Ok</button>
+      </mat-dialog-actions>
+</div>

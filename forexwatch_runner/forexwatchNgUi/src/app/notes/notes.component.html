@@ -1,0 +1,19 @@
+<div class="container">
+    <div *ngIf="showSuccessMessage$ | async" class="alert alert-success" role="alert">
+        {{message$ | async}}
+      </div>
+    <mat-card>
+        <mat-card-actions>
+            <button mat-button>Query</button>
+            <button mat-button (click)="createNewNote()">Add note</button>
+          </mat-card-actions>
+    </mat-card>
+    <br/>
+    <div *ngIf="showEdit && accounts$">
+        <app-noteform [note]="selectedNote" [accounts]="accounts$" (notesave)="saveNote($event)" (cancelform)="cancelEdit($event)" (deletenote)="delete($event)" ></app-noteform>
+        <br/>
+    </div>
+    <div>
+        <app-dailynotes (editnote)="editNote($event)" [showedit]="true" [notes]="dailyNotes$ | async"></app-dailynotes>
+    </div>
+</div>

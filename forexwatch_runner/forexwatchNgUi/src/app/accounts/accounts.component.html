@@ -1,0 +1,83 @@
+<div class="container">
+    <div *ngIf="showSuccessMessage$ | async" class="alert alert-success" role="alert">
+        {{message$ | async}}
+      </div>
+    <button mat-raised-button color="accent" (click)="newAccount()">New account</button>
+    <br/>
+    <br/>
+    <div *ngFor="let account of accounts$ | async">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>{{account.accountName}}</mat-card-title>
+            <mat-card-subtitle>{{account.accountType}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="container">
+                <p>Balance : {{account.accountBalance}}</p>
+                <p>Equity : {{account.accountEquity}}</p>
+                <p>API key: {{account.apiKey}}</p>
+                <p>Free margin : {{account.accountFreeMargin}}</p>
+                <p>Used margin : {{account.accountUsedMargin}}</p>
+                <p>Initial balance : {{account.accountInitialBalance}}</p>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button (click)="editAccount(account)">Edit</button>
+        
+          </mat-card-actions>
+          
+    </mat-card>
+    <br/>
+    </div>
+
+    <br/>
+    <mat-card *ngIf="showEdit">
+        <mat-card-header>
+            <mat-card-title>Edit account</mat-card-title>
+            
+        </mat-card-header>
+        <mat-card-content>
+            <div class="container">
+                <form #accountForm="ngForm">    
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Account name</mat-label>
+                        <input name="accountName" matInput placeholder="account name" [(ngModel)]="selectedAccount.accountName">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Account API-key</mat-label>
+                        <input name="apiKey" matInput placeholder="account API-key" [(ngModel)]="selectedAccount.apiKey">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Equity</mat-label>
+                        <input matInput name="accountEquity" placeholder="account equity" [(ngModel)]="selectedAccount.accountEquity">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Balance</mat-label>
+                        <input matInput name="accountBalance" placeholder="account balance" [(ngModel)]="selectedAccount.accountBalance">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Initial balance</mat-label>
+                        <input matInput name="accountInitialBalance" placeholder="account initial balance" [(ngModel)]="selectedAccount.accountInitialBalance">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Comment</mat-label>
+                        <input matInput name="accountComment" placeholder="comment" [(ngModel)]="selectedAccount.accountComment">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Account type</mat-label>
+                        <mat-select [(value)]="selectedAccount.accountType">
+                          <mat-option value="LIVE">LIVE</mat-option>
+                          <mat-option value="DEMO">DEMO</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                </form>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button (click)="cancel()">Cancel</button>
+            <button mat-button (click)="save()">Save</button>
+            <button mat-button color="warn" *ngIf="selectedAccount.accountId" (click)="delete()">Delete</button>
+          </mat-card-actions>
+    </mat-card>
+
+</div>

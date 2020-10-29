@@ -1,0 +1,31 @@
+<div class="container">
+
+    <div *ngIf="showSuccessMessage$ | async" class="alert alert-success" role="alert">
+        {{message$ | async}}
+    </div>
+    <mat-card>
+      <mat-card-content>
+        <div class="container">
+          <form #accountForm="ngForm">
+            <mat-form-field>
+              <mat-label>Account</mat-label>
+              <mat-select [(value)]="selectedAccount"  (selectionChange)="onAccountChange($event.value)">
+                <mat-option *ngFor="let account of accounts$ | async"  [(value)]="account.accountId">{{account.accountName}}</mat-option>
+              </mat-select>
+          </mat-form-field>
+          </form>
+        </div>
+      </mat-card-content>
+      
+      <mat-card-actions>
+        <button mat-button (click)="listAccountSettings()">List settings</button>
+        <button mat-button [disabled]="!selectedAccount" (click)="addSetting()">Add setting</button>
+      </mat-card-actions>
+    </mat-card>
+
+
+    <br/>
+    <br/>
+    <app-settingslist [settings]="settings$ | async" (deleteSetting)="deleteSetting($event)" (editsetting)="editSetting($event)"></app-settingslist>
+
+</div>
